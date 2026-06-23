@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch5 table</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        @media screen and (max-width: 768px) {
+
+            .table-rwb thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwb tbody tr {
+                display: block;
+                margin-top: 15px;
+                border: 2px solid cornflowerblue;
+                border-radius: 5px;
+            }
+
+            .table-rwb tbody tr td {
+                display: block;
+                overflow: hidden;
+                /* 避免跑版、溢位 */
+            }
+
+            /* 偽元素 */
+            .table-rwb tbody tr td::before {
+                content: attr(data-xxx) "：";
+                font-size: 15px;
+                font-weight: bold;
+                color: #362a4b;
+                display: block;
+                float: left;
+                width: 40%;
+                text-align: right;
+                padding: 1em;
+                
+            }
+
+            .table-rwb tbody tr td span{
+                display: block;
+                float: left;
+                width: 60%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-4 text-center">產品列表</div>
+        <!-- table>thead>tr>th*5 -->
+        <table class="table mt-3 table-bordered table-hover table-rwb">
+            <caption class="table-rwb">表1.2 產品列表</caption>
+            <!-- table快速表格 mt-3外間距 table-bordered框線 table-hover -->
+            <thead class="table-dark">
+                <tr>
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+            <!-- tbody>tr*4>td*5 -->
+            <tbody>
+                <tr class="table-danger">
+                    <!-- 顏色 -->
+                    <td data-xxx="產品編號"><span>001</span></td>
+                    <td data-xxx="產品名稱"><span>美式咖啡</span></td>
+                    <td data-xxx="產品價格"><span>50</span></td>
+                    <td data-xxx="產品數量"><span>10</span></td>
+                    <td data-xxx="產品備註"><span>本人幹部代表圍繞實行往往日期是我解壓密碼是有自身畫面，運行歷史都有，對方包括姐姐斗內重量互相什麼時候，人們運行平台天空一直，業主感受快速一天創造權威突然病毒迅速到達查看營銷，光臨歌詞留下第一東方頭銜姐姐，智能年度一方面金幣會員喜歡五金廣泛您可以重點部隊首。</span></td>
+                    <!-- span是為了CSS加上去的 -->
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>拿鐵咖啡</td>
+                    <td>70</td>
+                    <td>10</td>
+                    <td>無糖</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>西西里咖啡</td>
+                    <td>70</td>
+                    <td>1</td>
+                    <td>多加檸檬汁</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>手沖咖啡</td>
+                    <td>80</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

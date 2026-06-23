@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opendata - 地方美食</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        @media screen and (max-width: 768px) {
+
+            .table-rwd thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                margin-top: 15px;
+                border: 2px solid var(--success-color);
+                border-radius: 5px;
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                /* 避免跑版 溢位 */
+                overflow: hidden;
+            }
+
+            /* 偽元素 */
+            .table-rwd tbody tr td::before {
+                content: attr(data-th) " : ";
+                font-size: 20px;
+                font-weight: bold;
+                color: var(--warning-color);
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 1em;
+            }
+
+            .table-rwd tbody tr td span {
+                display: block;
+                float: left;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-3 text-center fw-900">opendata - 地方美食列表</div>
+        <table class="table mt-3 table-bordered table-rwd">
+            <caption>表1.2 opendata - 地方美食列表</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th width="5%">編號</th>
+                    <th width="25%">名稱</th>
+                    <th width="20%">圖片</th>
+                    <th width="20%">地址</th>
+                    <th width="30%">簡介</th>
+                </tr>
+            </thead>
+            <tbody id="mybody">
+                <tr>
+                    <td data-th="編號"><span>xxx</span></td>
+                    <td data-th="名稱"><span>xxx</span></td>
+                    <td data-th="圖片"><span>
+                            <img src="https://ezgo.ardswc.gov.tw/_api/content/images/agrispots/25819/480x360_agrispots-image--i0uqxsgseicmbf12-ztpa.jpg"
+                                class="img-fluid" alt="">
+                        </span></td>
+                    <td data-th="地址"><span>1xx0</span></td>
+                    <td data-th="簡介"><span>xx
+                            青草湖女兒內部難得衣服資料庫利益聲明熱點打了日本努力應該，主演上門零售儘量躺在演出種子，狀態見過女性開發者大會身材遊戲連載經理一座下載容量體系徹底，連載電話發佈日期中壢全體帶來連續既然人物還要內存把。</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function () {
+            //載入資料
+            $.ajax({
+                type: "GET",
+                url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    //資料清洗
+                    const cleanData = data.map(function (item, index) {
+                        //名稱
+                        let name = (item.Name ?? "").trim();
+                        if (name == "") {
+                            name = "未提供名稱";
+                        }
+
+                        //圖片
+                        let img = (item.PicURL ?? "").trim();
+                        if (img == "") {
+                            img = "未提供圖片";
+                        }
+
+                        //地址
+                        let address = (item.Address ?? "").trim();
+                        if (address == "") {
+                            address = "未提供地址";
+                        }
+
+                        //簡介
+                        let description = (item.HostWords ?? "").trim();
+                        if (description == "") {
+                            description = "未提供簡介";
+                        }
+
+                        return{
+                          id: index + 1,
+                          name: name,
+                          img: img,
+                          address: address,
+                          description: description
+                        }
+                    });
+
+                    console.log("清洗後的資料", cleanData);
+
+                    //將清洗後的資料渲染至table
+                    $("#mybody").empty();
+                    cleanData.forEach(function(item){
+                        let strHTML = `<tr>
+                                        <td data-th="編號"><span>${item.id}</span></td>
+                                        <td data-th="名稱"><span>${item.name}</span></td>
+                                        <td data-th="圖片"><span>
+                                                <img src="${item.img}" class="img-fluid" alt="">
+                                            </span></td>
+                                        <td data-th="地址"><span>${item.address}</span></td>
+                                        <td data-th="簡介"><span>
+                                                ${item.description}</span>
+                                        </td>
+                                    </tr>`;
+                        $("#mybody").append(strHTML);
+                    });
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

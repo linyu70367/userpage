@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料清洗練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+</head>
+
+<body>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function () {
+            const hotel = [
+                {
+                    Name: "  山景渡假村  ",
+                    City: "台中市",
+                    Town: "和平區",
+                    Tel: "04-2598-1234",
+                    RoomType: "雙人房",
+                    Price: 3200,
+                    Email: "service@mountainhotel.com"
+                },
+                {
+                    Name: "海風民宿",
+                    City: "臺中市",
+                    Town: "  梧棲區  ",
+                    Tel: "04-2656-7788",
+                    RoomType: "  四人房 ",
+                    Price: "4500",
+                    Email: "seaview@example.com"
+                },
+                {
+                    Name: " 森林小屋 ",
+                    City: "南投縣",
+                    Town: null,
+                    Tel: "049-280-5566",
+                    RoomType: "雙人房",
+                    Price: "2800",
+                    Email: "forest@example.com"
+                },
+                {
+                    Name: "星空露營旅館",
+                    City: "台中市",
+                    Town: undefined,
+                    Tel: undefined,
+                    RoomType: "   六人房   ",
+                    Price: 6200,
+                    Email: null
+                },
+                {
+                    Name: "港灣商旅",
+                    City: "高雄市",
+                    Town: "前金區",
+                    Tel: "07-5555-8888",
+                    RoomType: "單人房",
+                    Price: "2100",
+                    Email: "harbor@example.com"
+                },
+                {
+                    Name: "  城市精品旅店 ",
+                    City: "臺中市",
+                    Town: "",
+                    Tel: null,
+                    RoomType: "  雙人房",
+                    Price: 3600,
+                    Email: undefined
+                },
+                {
+                    Name: "湖畔渡假會館",
+                    City: "南投縣",
+                    Town: "  魚池鄉 ",
+                    Tel: "049-285-9988",
+                    RoomType: "湖景雙人房",
+                    Price: "5800",
+                    Email: "lakehotel@example.com"
+                },
+                {
+                    Name: " 古城客棧",
+                    City: "臺南市",
+                    Town: "中西區",
+                    Tel: undefined,
+                    RoomType: "   三人房 ",
+                    Price: 3900,
+                    Email: "oldtown@example.com"
+                },
+                {
+                    Name: "日光溫泉飯店  ",
+                    City: "台中市",
+                    Town: null,
+                    Tel: "04-2333-6677",
+                    RoomType: "溫泉雙人房  ",
+                    Price: "7200",
+                    Email: null
+                },
+                {
+                    Name: "雲端旅館",
+                    City: "臺北市",
+                    Town: "信義區",
+                    Tel: "02-2722-8899",
+                    RoomType: "豪華雙人房",
+                    Price: 6800,
+                    Email: "cloudhotel@example.com"
+                }
+            ];
+
+            const cleanHotel = hotel.map(function(item, index){
+                //將 台中市 統一修改為 臺中市
+                let city = item.City;
+                if(city == "台中市"){
+                    city = "臺中市";
+                }
+
+                //移除前後空白；若沒有資料，顯示 行政區未提供
+                let town = (item.Town ?? "").trim();
+                if(town == ""){
+                    town = "行政區未提供";
+                }
+
+                return {
+                    id: index +1,
+                    Name: item.Name.trim(),
+                    City: city,
+                    Town: town,
+                    Tel: (item.Tel ?? "未提供").trim(),
+                    RoomType: item.RoomType.trim(),
+                    Price: Number(item.Price),
+                    Email: (item.Email ?? "未提供").trim()
+                };
+            });
+
+            console.log("原本的資料", hotel);
+            console.log("清洗後的資料", cleanHotel);
+        });
+    </script>
+</body>
+
+</html>

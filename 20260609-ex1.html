@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習題</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        const hotel = [
+            {
+                Name: "  豪泰大飯店  ",
+                City: "台中市",
+                Town: "西屯區",
+                Tel: "04-22558888",
+                RoomType: "雙人房",
+                Price: 3200,
+                Email: "service@haotaihotel.com"
+            },
+            {
+                Name: "日月旅館",
+                City: "臺中市",
+                Town: "",
+                Tel: "04-23221111",
+                RoomType: " 單人房 ",
+                Price: "4500",
+                Email: "info@sunmoonhotel.com"
+            },
+            {
+                Name: "城市商旅",
+                City: "台中市",
+                Town: null,
+                Tel: null,
+                RoomType: "家庭房",
+                Price: 5200,
+                Email: null
+            },
+            {
+                Name: "金典酒店",
+                City: "臺中市",
+                Town: undefined,
+                Tel: undefined,
+                RoomType: " 豪華套房 ",
+                Price: "6800",
+                Email: undefined
+            },
+            {
+                Name: "海灣精品旅店",
+                City: "台中市",
+                Town: "北區",
+                Tel: "04-22334455",
+                RoomType: "雙人房",
+                Price: "3900",
+                Email: "contact@bayhotel.com"
+            },
+            {
+                Name: "  綠園道飯店",
+                City: "臺中市",
+                Town: "西區",
+                Tel: "04-23770000",
+                RoomType: "商務房",
+                Price: 4100,
+                Email: "booking@greenhotel.com"
+            },
+            {
+                Name: "幸福旅居  ",
+                City: "台中市",
+                Town: "南屯區",
+                Tel: null,
+                RoomType: "三人房",
+                Price: "3600",
+                Email: "stay@happyinn.com"
+            },
+            {
+                Name: "中央大飯店",
+                City: "臺中市",
+                Town: "中區",
+                Tel: "04-22223333",
+                RoomType: " 標準雙人房 ",
+                Price: 2800,
+                Email: undefined
+            },
+            {
+                Name: "雅緻商務旅館",
+                City: "台中市",
+                Town: "東區",
+                Tel: undefined,
+                RoomType: "豪華雙床房",
+                Price: "5000",
+                Email: null
+            },
+            {
+                Name: "星光酒店",
+                City: "臺中市",
+                Town: "北屯區",
+                Tel: "04-22446688",
+                RoomType: "套房",
+                Price: 7500,
+                Email: "service@starhotel.com"
+            }
+        ];
+        const cleanHotel = hotel.map(function (item, index) {
+            // 將 台中市 統一修改為 臺中市
+            let city = item.City;
+            if(city == "台中市"){
+                city = "臺中市"
+            }
+            // 移除前後空白；若沒有資料，顯示 行政區未提供
+            let town=(item.Town ?? "行政區未提供").trim();
+            if(town == ""){
+                town=="行政區未提供"
+            }
+
+            return{
+                id: index + 1,
+                Name: item.Name.trim(),
+                City: city,
+                Town: town,
+                Tel: (item.Tel ?? "未提供").trim(),
+                RoomType: item.RoomType.trim(),
+                Price: Number(item.Price),
+                Email: (item.Email ?? "未提供").trim()
+            }
+        });
+
+
+
+
+        console.log('原本的資料', hotel);
+        console.log('資料清洗後的資料', cleanHotel);
+        
+    </script>
+</body>
+
+</html>

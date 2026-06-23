@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch6 練習 ex02</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        .box01 {
+            height: 200px;
+            background-image: url(images/landscape01.avif);
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .box02 {
+            height: 90px;
+            color: aliceblue;
+            line-height: 90px;
+            font-size: 48px;
+            margin-top: 10px;
+        }
+
+        .box03 {
+            padding: 10px;
+            box-shadow: 2px 2px 6px 2px #ccc;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .box03 .h3 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+
+
+        @media screen and (min-width: 768px) {
+            .box02 {
+                height: 180px;
+                line-height: 180px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .box02 {
+                width: 180px;
+                border-radius: 50%;
+                background-color: var(--graffiti-burnt-ochre);
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .box02 {
+                width: 220px;
+                height: 220px;
+                line-height: 220px;
+                background-color: var(--graffiti-faded-purple);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 01 -->
+        <div class="row">
+            <div class="col-12 d-none d-sm-block">
+                <div class="box01"></div>
+            </div>
+        </div>
+        <!-- 02 -->
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="box02 bg-primary text-center fw-900">選單01</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="box02 bg-primary text-center fw-900">選單02</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="box02 bg-primary text-center fw-900">選單03</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="box02 bg-primary text-center fw-900">選單04</div>
+            </div>
+        </div>
+        <!-- 03 -->
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="box03 roller-r text-center">
+                    <div class="roller-r_box">
+                        <button class="btn btn-warning">查看更多</button>
+                    </div>
+                    <img src="images/landscape01.avif" class="img-fluid" alt="">
+                    <div class="h3 fw-900 text-center">旅遊景點001</div>
+                    <p class="fw-600">上面複製這個需求簡介手機發達圍繞管理系統，不是很花園即可點此相冊收集當前各類，上門確實製品總經理隱藏描述感染，重大產生。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box03 roller-l">
+                    <div class="roller-l_box">
+                        <button class="btn btn-warning">查看更多</button>
+                    </div>
+                    <img src="images/landscape02.avif" class="img-fluid" alt="">
+                    <div class="h3 fw-900 text-center">旅遊景點001</div>
+                    <p class="fw-600">上面複製這個需求簡介手機發達圍繞管理系統，不是很花園即可點此相冊收集當前各類，上門確實製品總經理隱藏描述感染，重大產生。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box03 roller-r">
+                    <div class="roller-r_box">
+                        <button class="btn btn-warning">查看更多</button>
+                    </div>
+                    <img src="images/landscape01.avif" class="img-fluid" alt="">
+                    <div class="h3 fw-900 text-center">旅遊景點001</div>
+                    <p class="fw-600">上面複製這個需求簡介手機發達圍繞管理系統，不是很花園即可點此相冊收集當前各類，上門確實製品總經理隱藏描述感染，重大產生。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box03 roller-l">
+                    <div class="roller-l_box">
+                        <button class="btn btn-warning">查看更多</button>
+                    </div>
+                    <img src="images/landscape02.avif" class="img-fluid" alt="">
+                    <div class="h3 fw-900 text-center">旅遊景點001</div>
+                    <p class="fw-600">上面複製這個需求簡介手機發達圍繞管理系統，不是很花園即可點此相冊收集當前各類，上門確實製品總經理隱藏描述感染，重大產生。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box03 roller-l">
+                    <div class="roller-l_box">
+                        <button class="btn btn-warning">查看更多</button>
+                    </div>
+                    <img src="images/landscape01.avif" class="img-fluid" alt="">
+                    <div class="h3 fw-900 text-center">旅遊景點001</div>
+                    <p class="fw-600">上面複製這個需求簡介手機發達圍繞管理系統，不是很花園即可點此相冊收集當前各類，上門確實製品總經理隱藏描述感染，重大產生。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box03 roller-r">
+                    <div class="roller-r_box">
+                        <button class="btn btn-warning">查看更多</button>
+                    </div>
+                    <img src="images/landscape02.avif" class="img-fluid" alt="">
+                    <div class="h3 fw-900 text-center">旅遊景點001</div>
+                    <p class="fw-600">上面複製這個需求簡介手機發達圍繞管理系統，不是很花園即可點此相冊收集當前各類，上門確實製品總經理隱藏描述感染，重大產生。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

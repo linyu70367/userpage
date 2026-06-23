@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅館列表</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        @media screen and (max-width: 768px) {
+
+            .table-rwb thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwb tbody tr {
+                display: block;
+                margin-top: 15px;
+                border: 2px solid #5dade2;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .table-rwb tbody tr td {
+                display: flex;
+                align-items: center;
+                padding: 8px 0;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .table-rwb tbody tr td::before {
+                content: attr(data-xxx) "：";
+                font-size: 15px;
+                font-weight: bold;
+                color: #004d99;
+                flex: 1;
+                text-align: right;
+                margin-right: 10px;
+            }
+
+            .table-rwb tbody tr td span {
+                flex: 2;
+                text-align: left;
+            }
+        }
+
+        .erp-table th {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .erp-table td {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .erp-table tr:hover td {
+            background-color: #d6eaf8;
+        }
+
+        .erp-highlight {
+            font-weight: bold;
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-4 text-center">旅館列表</div>
+
+        <table class="table mt-3 table-bordered table-hover table-rwb erp-table">
+            <caption>表1.2 旅館列表</caption>
+            <thead>
+                <tr>
+                    <th>編號</th>
+                    <th>名稱</th>
+                    <th>縣市名稱</th>
+                    <th>鄉鎮區名稱</th>
+                    <th>電話</th>
+                    <th>房型</th>
+                    <th>價格</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-xxx="編號"><span>001</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">皇家大飯店</span></td>
+                    <td data-xxx="縣市名稱"><span>台北市</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>中正區</span></td>
+                    <td data-xxx="電話"><span>02-2311-1111</span></td>
+                    <td data-xxx="房型"><span>豪華雙人房</span></td>
+                    <td data-xxx="價格"><span>3200</span></td>
+                    <td data-xxx="Email"><span>royal001@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>002</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">海景商旅</span></td>
+                    <td data-xxx="縣市名稱"><span>高雄市</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>鼓山區</span></td>
+                    <td data-xxx="電話"><span>07-521-2222</span></td>
+                    <td data-xxx="房型"><span>海景套房</span></td>
+                    <td data-xxx="價格"><span>4500</span></td>
+                    <td data-xxx="Email"><span>sea002@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>003</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">日月湖旅店</span></td>
+                    <td data-xxx="縣市名稱"><span>南投縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>魚池鄉</span></td>
+                    <td data-xxx="電話"><span>049-285-3333</span></td>
+                    <td data-xxx="房型"><span>湖景雙人房</span></td>
+                    <td data-xxx="價格"><span>3800</span></td>
+                    <td data-xxx="Email"><span>sunmoon003@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>004</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">森林渡假村</span></td>
+                    <td data-xxx="縣市名稱"><span>嘉義縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>阿里山鄉</span></td>
+                    <td data-xxx="電話"><span>05-267-4444</span></td>
+                    <td data-xxx="房型"><span>木屋四人房</span></td>
+                    <td data-xxx="價格"><span>5200</span></td>
+                    <td data-xxx="Email"><span>forest004@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>005</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">城市精品飯店</span></td>
+                    <td data-xxx="縣市名稱"><span>台中市</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>西屯區</span></td>
+                    <td data-xxx="電話"><span>04-2451-5555</span></td>
+                    <td data-xxx="房型"><span>商務單人房</span></td>
+                    <td data-xxx="價格"><span>2500</span></td>
+                    <td data-xxx="Email"><span>city005@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>006</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">溫泉會館</span></td>
+                    <td data-xxx="縣市名稱"><span>宜蘭縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>礁溪鄉</span></td>
+                    <td data-xxx="電話"><span>03-988-6666</span></td>
+                    <td data-xxx="房型"><span>溫泉套房</span></td>
+                    <td data-xxx="價格"><span>4800</span></td>
+                    <td data-xxx="Email"><span>spring006@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>007</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">海灣渡假飯店</span></td>
+                    <td data-xxx="縣市名稱"><span>屏東縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>恆春鎮</span></td>
+                    <td data-xxx="電話"><span>08-886-7777</span></td>
+                    <td data-xxx="房型"><span>家庭四人房</span></td>
+                    <td data-xxx="價格"><span>4200</span></td>
+                    <td data-xxx="Email"><span>bay007@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>008</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">花蓮山海館</span></td>
+                    <td data-xxx="縣市名稱"><span>花蓮縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>花蓮市</span></td>
+                    <td data-xxx="電話"><span>03-835-8888</span></td>
+                    <td data-xxx="房型"><span>景觀雙床房</span></td>
+                    <td data-xxx="價格"><span>3600</span></td>
+                    <td data-xxx="Email"><span>hualien008@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>009</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">金門古厝民宿</span></td>
+                    <td data-xxx="縣市名稱"><span>金門縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>金城鎮</span></td>
+                    <td data-xxx="電話"><span>082-321-999</span></td>
+                    <td data-xxx="房型"><span>特色雙人房</span></td>
+                    <td data-xxx="價格"><span>2200</span></td>
+                    <td data-xxx="Email"><span>kinmen009@hotel.com</span></td>
+                </tr>
+
+                <tr>
+                    <td data-xxx="編號"><span>010</span></td>
+                    <td data-xxx="名稱"><span class="erp-highlight">澎湖藍海飯店</span></td>
+                    <td data-xxx="縣市名稱"><span>澎湖縣</span></td>
+                    <td data-xxx="鄉鎮區名稱"><span>馬公市</span></td>
+                    <td data-xxx="電話"><span>06-927-1010</span></td>
+                    <td data-xxx="房型"><span>海景雙人房</span></td>
+                    <td data-xxx="價格"><span>4100</span></td>
+                    <td data-xxx="Email"><span>blue010@hotel.com</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

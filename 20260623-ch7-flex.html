@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch7-flex</title>
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .box01{
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 36px;
+            font-weight: 900;
+        }
+        .box02{
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 36px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display-2 fw-900">1. flex-row</div>
+            <div class="row flex-row">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+        
+        <div class="display-2 fw-900">2. flex(-md)-row-reverse</div>
+            <div class="row flex-md-row-reverse">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">3. flex(-md)-column</div>
+            <div class="row flex-md-column">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">4. flex(-md)-column-reverse</div>
+            <div class="row flex-md-column-reverse">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+<!-- 類別	效果
+justify-content-start	靠左排列
+justify-content-center	置中排列
+justify-content-end	靠右排列
+justify-content-around	每個項目周圍平均留白
+justify-content-between	第一個靠左、最後一個靠右，中間平均分布
+justify-content-evenly	所有間距（含邊緣）完全相等 -->
+        <div class="display-2 fw-900">5. justify-content-start</div>
+            <div class="row justify-content-start">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">6. justify-content-center</div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+            <div class="display-2 fw-900">7. justify-content-end</div>
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">8. justify-content-(md-)around</div>
+            <div class="row justify-content-md-around">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">9. justify-content-between</div>
+            <div class="row justify-content-between">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">9.1 justify-content-evenly</div>
+            <div class="row justify-content-evenly">
+                <div class="col-3">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-3">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">10. align-items-斷點-center, align-self-斷點-start</div>
+            <div class="row flex-lg-column align-items-xl-center">
+                <div class="col-2 align-self-xxl-start">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-2  align-self-xxl-end">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-2">
+                    <div class="box01 bg-success">03</div>
+                </div>
+                <div class="col-2  align-self-xxl-start">
+                    <div class="box01 bg-success">04</div>
+                </div>
+                <div class="col-2  align-self-xxl-end">
+                    <div class="box01 bg-success">05</div>
+                </div>
+                <div class="col-2">
+                    <div class="box01 bg-success">06</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">11. order</div>
+            <div class="row flex-row">
+                <div class="col-2 order-md-4 order-xxl-5">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-2 order-md-3 order-xxl-4">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-2 order-md-0 order-xxl-1">
+                    <div class="box01 bg-success">03</div>
+                </div>
+                <div class="col-2 order-md-5 order-xxl-0">
+                    <div class="box01 bg-success">04</div>
+                </div>
+                <div class="col-2 order-md-2 order-xxl-3">
+                    <div class="box01 bg-success">05</div>
+                </div>
+                <div class="col-2 order-md-1 order-xxl-2">
+                    <div class="box01 bg-success">06</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">12. 左右推移，ms-auto(右移)、me-auto(左移)</div>
+            <div class="row flex-row">
+                <div class="col-2">
+                    <div class="box01 bg-success">01</div>
+                </div>
+                <div class="col-2 ms-xl-auto">
+                    <div class="box01 bg-success">02</div>
+                </div>
+                <div class="col-2 me-xxl-auto">
+                    <div class="box01 bg-success">03</div>
+                </div>
+            </div>
+
+        <div class="display-2 fw-900">13. 上下推移，mt-auto(上往下推)、mb-auto(下往上推)</div>
+            <div class="row flex-column bg-warning" style="height: 50vh;">
+                <div class="col-2">
+                    <div class="box01 bg-danger">01</div>
+                </div>
+                <div class="col-2 mt-auto">
+                    <div class="box01 bg-danger">02</div>
+                </div>
+                <div class="col-2 mb-auto">
+                    <div class="box01 bg-danger">03</div>
+                </div>
+            </div>
+
+<!-- Where property is one of:
+
+m - for classes that set margin
+p - for classes that set padding
+Where sides is one of:
+
+t - for classes that set margin-top or padding-top
+b - for classes that set margin-bottom or padding-bottom
+s - (start) for classes that set margin-left or padding-left in LTR, margin-right or padding-right in RTL
+e - (end) for classes that set margin-right or padding-right in LTR, margin-left or padding-left in RTL
+x - for classes that set both *-left and *-right
+y - for classes that set both *-top and *-bottom
+blank - for classes that set a margin or padding on all 4 sides of the element
+Where size is one of:
+
+0 - for classes that eliminate the margin or padding by setting it to 0
+1 - (by default) for classes that set the margin or padding to $spacer * .25
+2 - (by default) for classes that set the margin or padding to $spacer * .5
+3 - (by default) for classes that set the margin or padding to $spacer
+4 - (by default) for classes that set the margin or padding to $spacer * 1.5
+5 - (by default) for classes that set the margin or padding to $spacer * 3
+auto - for classes that set the margin to auto -->
+
+
+        
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

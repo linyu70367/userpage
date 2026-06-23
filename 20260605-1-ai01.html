@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>客運公車官方網站</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #5dade2 !important;
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .nav-link:hover {
+            color: #ffd43b !important;
+        }
+
+        .form-control {
+            border-radius: 20px;
+        }
+
+        .btn-outline-success {
+            border-color: #ffd43b;
+            color: #ffd43b;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #ffd43b;
+            color: #004d99;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #004d99;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #5dade2;
+            padding: 1rem 0;
+        }
+
+        footer .nav-link {
+            color: #fff !important;
+        }
+
+        footer .nav-link.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center mt-3"><i class="fa-solid fa-bus"></i> 歡迎來到客運公車官方網站</h1>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg nav-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-bus"></i> 客運公車服務</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i> 首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-ticket"></i> 訂票服務</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-info-circle"></i> 乘車資訊
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-route"></i> 市區公車路線</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-road"></i> 長途客運班次</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-train"></i> 交通轉乘指南</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled"><i class="fa-solid fa-wrench"></i> 施工中</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="輸入路線或服務" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-search"></i> 查詢</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- container -->
+    <div class="container mt-4">
+        <!-- card -->
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="images/bus01.avif" class="card-img-top" alt="市區公車">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-route"></i> 市區公車路線查詢</h5>
+                        <p class="card-text">提供即時班次、票價資訊與路線規劃，讓您輕鬆掌握每日通勤。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/bus03.avif" class="card-img-top" alt="長途客運">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-ticket"></i> 長途客運訂票服務</h5>
+                        <p class="card-text">支援線上訂票與座位選擇，快速完成購票，安心出行。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/bus03.avif" class="card-img-top" alt="交通轉乘">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-train"></i> 交通轉乘資訊</h5>
+                        <p class="card-text">整合捷運、火車與公車轉乘，提供最便利的交通方案。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/bus01.avif" class="card-img-top" alt="安全公告">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-shield-halved"></i> 乘車安全與公告</h5>
+                        <p class="card-text">最新乘車安全提醒與官方公告，保障您的旅途安心。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文字 -->
+        <div class="mt-4">
+            <p><i class="fa-solid fa-bus"></i> 本網站提供全方位的客運公車服務資訊，包含市區公車路線查詢、長途客運訂票、交通轉乘指南與乘車安全公告。我們致力於打造便捷、安全的公共交通環境，讓每位乘客都能享受舒適的旅程。</p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="mt-4">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-bus"></i> PowerBy 客運公車官方網站 2026.06</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"><i class="fa-solid fa-file-contract"></i> 服務條款</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"><i class="fa-solid fa-shield"></i> 隱私政策</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled"><i class="fa-solid fa-envelope"></i> 聯絡我們</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習3</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .box {
+            height: 150px;
+            margin-top: 15px;
+            text-align: center;
+            line-height: 150px;
+            /* 垂直置中 */
+            font-weight: 900;
+        }
+
+        .roller {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roller .roller_box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: -100%;
+            /*將roller_box2的內容置中*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: bottom 1s;
+
+            /* 玻璃質感 */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+
+            /* 玻璃邊框 */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            /* 高光 */
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.4),
+                0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .roller:hover .roller_box {
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-md-none d-lg-block display-3">
+                <div class="box bg-success">
+                    header
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-xxl-2 col-lg-4 col-sm-6 display-3">
+                <div class="box bg-warning roller">
+                    123456798
+                    <div class="roller_box">
+                        <button class="btn btn-primary">查看</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-2 col-lg-4 col-sm-6 display-3">
+                <div class="box bg-warning">02</div>
+            </div>
+            <div class="col-xxl-2 col-lg-4 col-sm-6 display-3">
+                <div class="box bg-warning">03</div>
+            </div>
+            <div class="col-xxl-2 col-lg-4 col-sm-6 display-3">
+                <div class="box bg-warning">04</div>
+            </div>
+            <div class="col-xxl-2 col-lg-4 col-sm-6 display-3">
+                <div class="box bg-warning">05</div>
+            </div>
+            <div class="col-xxl-2 col-lg-4 col-sm-6 display-3">
+                <div class="box bg-warning">06</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">01</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">02</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">03</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">04</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">05</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">06</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">07</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger">08</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 d-none d-md-block">
+                <div class="box bg-info">footer</div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

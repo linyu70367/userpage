@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切版練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        .header {
+            height: 160px;
+            background-image: url(images/landscape01.avif);
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .navBox {
+            height: 90px;
+            margin-top: 15px;
+            font-size: 48px;
+            text-align: center;
+            line-height: 90px;
+            font-weight: 900;
+            color: aliceblue;
+        }
+
+        .contentBox {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all .3s;
+        }
+
+        .contentBox:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+        }
+
+        .contentBox img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width: 768px) {
+            .navBox {
+                height: 180px;
+                line-height: 180px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .navBox {
+                width: 180px;
+                border-radius: 50%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .navBox {
+                width: 220px;
+                height: 220px;
+                line-height: 220px;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-none d-sm-block">
+                <div class="header bg-info"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="navBox bg-primary">選單01</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="navBox bg-primary">選單02</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="navBox bg-primary">選單03</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="navBox bg-primary">選單04</div>
+            </div>
+        </div>
+        <div class="row" id="dataList">
+            <div class="col-md-6 col-lg-4 mt-3">
+                <div class="contentBox card h-100 shadow-sm roller-l">
+
+                    <!-- 圖片 -->
+                    <img src="images/landscape01.avif" class="card-img-top" alt="餐廳圖片">
+
+                    <!-- 內容 -->
+                    <div class="card-body d-flex flex-column">
+
+                        <!-- 餐廳名稱 -->
+                        <h4 class="card-title fw-bold text-primary">
+                            森林咖啡館
+                        </h4>
+
+                        <!-- 地址 -->
+                        <p class="text-secondary mb-2">
+                            📍 台中市西屯區台灣大道三段100號
+                        </p>
+
+                        <!-- 簡介 -->
+                        <p class="card-text flex-grow-1">
+                            森林咖啡館以自然綠意為主題，提供手沖咖啡、
+                            義大利麵與精緻甜點，舒適的用餐環境適合聚餐、
+                            約會與下午茶時光。
+                        </p>
+
+                        <!-- 按鈕 -->
+                        <div class="roller_box text-center">
+                            <a href="#" class="btn btn-success px-4">
+                                查看更多
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3000/travelFood/",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    // 幫我重新設計contentBox，我要擺入的資料包含餐廳圖片,餐廳名稱，餐廳地址，餐廳簡介(大約50~60字)，超連結(roller_box btn)，盡量使用bootstrap的功能。
+                    //1. 清洗資料，保留需要用到的欄位
+                   const cleanData = data.map(function (item, index) {
+                        //圖片
+                        let img = (item.PicURL ?? "").trim();
+                        if (img == "") {
+                            img = "images/ACL037300.jpg";
+                        }
+
+                        //名稱
+                        let name = (item.Name ?? "").trim();
+                        if (name == "") {
+                            name = "未提供名稱";
+                        }
+
+                        //地址 address
+                        let address = (item.Address ?? "").trim();
+                        if (address == "") {
+                            address = "未提供地址";
+                        }
+                        //地址 City
+                        let city = (item.City ?? "").trim();
+                        if (city == "") {
+                            city = "未提供縣市名稱";
+                        }
+
+                        //地址 Town
+                        let town = (item.Town ?? "").trim();
+                        if (town == "") {
+                            town = "未提供鄉鎮區名稱";
+                        }
+
+                        //簡介
+                        let description = (item.HostWords ?? "").trim();
+                        if (description == "") {
+                            description = "未提供簡介";
+                        }
+
+                        return {
+                            id: index + 1,
+                            name: name,
+                            img: img,
+                            address: city + town + address,
+                            description: description
+                        }
+                    });
+                    console.log("清洗後的資料", cleanData);
+
+
+                    //2. 將清洗後的資料渲染到AI產生的contentBox
+                    cleanData.forEach(function(item){
+                        let strHTML = `<div class="col-md-6 col-lg-4 mt-3">
+                                        <div class="contentBox card h-100 shadow-sm roller-l">
+
+                                            <!-- 圖片 -->
+                                            <img src="${item.img}" class="card-img-top" alt="餐廳圖片">
+
+                                            <!-- 內容 -->
+                                            <div class="card-body d-flex flex-column">
+                                                <!-- 餐廳名稱 -->
+                                                <h4 class="card-title fw-bold text-primary">
+                                                    ${item.name}
+                                                </h4>
+                                                <!-- 地址 -->
+                                                <p class="text-secondary mb-2">
+                                                    📍 ${item.address}
+                                                </p>
+                                                <!-- 簡介 -->
+                                                <p class="card-text flex-grow-1">
+                                                    ${item.description}
+                                                </p>
+                                                <!-- 按鈕 -->
+                                                <div class="roller_box text-center">
+                                                    <a href="#" class="btn btn-success px-4">
+                                                        查看更多
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                        $("#dataList").append(strHTML);
+                    });
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

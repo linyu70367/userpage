@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人首頁</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+        
+        :root{
+    /* 品牌色 */
+    --color-primary: #1565C0;
+    --color-secondary: #FF8F00;
+
+    /* 背景色 */
+    --color-bg-page: #F4F8FC;
+    --color-bg-content: #FFFFFF;
+
+    /* 文字色 */
+    --color-text-primary: #1B263B;
+    --color-text-secondary: #5C677D;
+    --color-text-light: #FDFDFD;
+
+    /* 導覽列 */
+    --color-nav-bg: #0D47A1;
+    --color-nav-hover: #FFA726;
+
+    /* 標題 */
+    --color-heading: #0F4C81;
+    --color-heading-line: #FFB74D;
+
+    /* 按鈕 */
+    --color-btn-primary: #1976D2;
+    --color-btn-primary-hover: #FF9800;
+
+    /* Footer */
+    --color-footer-bg: #082B59;
+    --color-footer-text: #DCE6F2;
+
+    /* 邊框 */
+    --color-border-accent: #D4A017;
+
+    /* 陰影 */
+    --color-shadow: #00000014;
+    --color-shadow-btn: #1565C040;
+    --color-shadow-btn-hover: #FF8F0059;
+
+    /* Banner 遮罩 */
+    --color-overlay-light: #0D47A126;
+    --color-overlay-dark: #082B5966;
+}
+        body{
+            font-family: "Zen Maru Gothic", sans-serif;
+            background-color: var(--color-primary);
+        }
+        /* 自我簡介 */
+        .s01{
+            background-color: var(--color-secondary);
+            height: 100vh;
+            position: relative;
+        }
+        .s01 .box01{
+            width: 200px;
+            height: 200px;
+            background-color: var(--color-primary);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .s01 .box02{
+            width: 200px;
+            height: 200px;
+            background-color: var(--color-primary);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .s01 .box03{
+            width: 200px;
+            height: 200px;
+            background-color: var(--color-primary);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .s01 .box04{
+            width: 200px;
+            height: 200px;
+            background-color: var(--color-primary);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .s01 .userimg{
+            background-color: black;
+            background-image: url(images/man04.jpg);
+            background-position: center center;
+            background-size: cover;
+            position: absolute;
+            top: 100px;
+            bottom: 100px;
+            left: 100px;
+            right: 100px;
+            border-radius: 15px;
+            box-shadow: var(--color-shadow);
+        }
+        .userText{
+            position: absolute;
+            top: 70%;
+            left: 20%;
+            right: 50%;
+        }
+        .userText h1{
+            /* font-size: 50px; */
+            font-weight: bolder;
+            color: var(--color-text-light);
+        }
+        .userText h2{
+            /* font-size: 30px; */
+            color: var(--color-text-light);
+        }
+        .userText p{
+            /* font-size: 30px; */
+            color: var(--color-text-light);
+        }
+        /* 我的作品 */
+
+        .s02 h2{
+            
+            font-size: 40px;
+            text-align: center;
+            color: var(--color-text-primary);
+            
+        }
+        .s02 .card{
+            display: inline-block;
+            background-color: var(--color-secondary);
+            margin: 2px;
+            padding: 2px;
+            border-radius: 15px;
+            text-align: left;
+        }
+        .s02 .card h3{
+            color: var(--color-text-primary);
+            font-size: 30px;
+            margin-top: 0;
+        }
+        .s02 .card p{
+            line-height: 1.3;
+            font-size: 30px;
+            color: var(--color-text-secondary);
+        }
+        .s02 .card a{
+            background-color: var(--color-nav-bg);
+            text-decoration: none;
+            font-size: 15px;
+            color: var(--color-text-light);
+
+        }
+
+    </style>
+</head>
+<body>
+    <section class="s01">
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="userimg"></div>
+        <div class="userText">
+            <h1>林郁鈞履歷</h1>
+            <hr>
+            <h2>應徵職位：軟體工程師</h2>
+            <p>座右銘：在非洲每過1分鐘，台灣就過了60秒。</p>
+            <p>浙江公里臨時保證檢索成立，把握營養維修浪費，不起如下，對我升級信號投入很容易兒子廣場今年財產很多想起，先生財富哪些，男。</p>
+        </div>
+    </section>
+    <section class="s02">
+        <h2>我的作品</h2>
+
+        <!-- 作品01 -->
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+            <!-- target="_blank"開新分頁 -->
+        </div>
+
+        <!-- 作品02 -->
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+            <!-- target="_blank"開新分頁 -->
+        </div>
+
+        <!-- 作品03 -->
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+            <!-- target="_blank"開新分頁 -->
+        </div>
+
+        <!-- 作品04 -->
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+            <!-- target="_blank"開新分頁 -->
+        </div>
+
+        <!-- 作品05 -->
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+            <!-- target="_blank"開新分頁 -->
+        </div>
+
+        <!-- 作品06 -->
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+            <!-- target="_blank"開新分頁 -->
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+    <div class="wrapper">
+        <div class="banner">
+            <div class="imgbox">
+                <div class="im">
+                    
+                </div>
+
+            </div>
+
+        </div>
+        <div class="content"></div>
+        <div class="footer"></div>
+    </div>
+    
+</body>
+</html>

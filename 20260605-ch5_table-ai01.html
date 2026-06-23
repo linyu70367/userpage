@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch5 table</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            .table-rwb thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwb tbody tr {
+                display: block;
+                margin-top: 15px;
+                border: 2px solid #5dade2;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .table-rwb tbody tr td {
+                display: flex;
+                align-items: center;
+                padding: 8px 0;
+                border-bottom: 1px solid #ddd;
+            }
+
+
+
+            .table-rwb tbody tr td::before {
+                content: attr(data-xxx) "：";
+                font-size: 15px;
+                font-weight: bold;
+                color: #004d99;
+                flex: 1;
+                text-align: right;
+                margin-right: 10px;
+            }
+
+            .table-rwb tbody tr td span {
+                flex: 2;
+                text-align: left;
+            }
+        }
+
+        /* ERP風格 */
+        .erp-table th {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .erp-table td {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .erp-table tr:hover td {
+            background-color: #d6eaf8;
+        }
+
+        .erp-highlight {
+            font-weight: bold;
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-4 text-center">產品列表</div>
+        <table class="table mt-3 table-bordered table-hover table-rwb erp-table">
+            <caption class="table-rwb">表1.2 產品列表</caption>
+            <thead>
+                <tr>
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-xxx="產品編號"><span>001</span></td>
+                    <td data-xxx="產品名稱"><span class="erp-highlight">珍珠奶茶</span></td>
+                    <td data-xxx="產品價格"><span>60</span></td>
+                    <td data-xxx="產品數量"><span>20</span></td>
+                    <td data-xxx="產品備註"><span>招牌人氣商品</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>002</span></td>
+                    <td data-xxx="產品名稱"><span>紅茶拿鐵</span></td>
+                    <td data-xxx="產品價格"><span>55</span></td>
+                    <td data-xxx="產品數量"><span>15</span></td>
+                    <td data-xxx="產品備註"><span>半糖少冰</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>003</span></td>
+                    <td data-xxx="產品名稱"><span>綠茶多多</span></td>
+                    <td data-xxx="產品價格"><span>50</span></td>
+                    <td data-xxx="產品數量"><span>12</span></td>
+                    <td data-xxx="產品備註"><span>加養樂多</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>004</span></td>
+                    <td data-xxx="產品名稱"><span>冬瓜檸檬</span></td>
+                    <td data-xxx="產品價格"><span>45</span></td>
+                    <td data-xxx="產品數量"><span>18</span></td>
+                    <td data-xxx="產品備註"><span>清爽解渴</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>005</span></td>
+                    <td data-xxx="產品名稱"><span>四季春青茶</span></td>
+                    <td data-xxx="產品價格"><span>40</span></td>
+                    <td data-xxx="產品數量"><span>25</span></td>
+                    <td data-xxx="產品備註"><span>無糖</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>006</span></td>
+                    <td data-xxx="產品名稱"><span>芒果青茶</span></td>
+                    <td data-xxx="產品價格"><span>65</span></td>
+                    <td data-xxx="產品數量"><span>10</span></td>
+                    <td data-xxx="產品備註"><span>夏季限定</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>007</span></td>
+                    <td data-xxx="產品名稱"><span>抹茶拿鐵</span></td>
+                    <td data-xxx="產品價格"><span>70</span></td>
+                    <td data-xxx="產品數量"><span>8</span></td>
+                    <td data-xxx="產品備註"><span>加鮮奶</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>008</span></td>
+                    <td data-xxx="產品名稱"><span>黑糖珍珠鮮奶</span></td>
+                    <td data-xxx="產品價格"><span>75</span></td>
+                    <td data-xxx="產品數量"><span>5</span></td>
+                    <td data-xxx="產品備註"><span>每日限量</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>009</span></td>
+                    <td data-xxx="產品名稱"><span>百香綠茶</span></td>
+                    <td data-xxx="產品價格"><span>55</span></td>
+                    <td data-xxx="產品數量"><span>14</span></td>
+                    <td data-xxx="產品備註"><span>酸甜口感</span></td>
+                </tr>
+                <tr>
+                    <td data-xxx="產品編號"><span>010</span></td>
+                    <td data-xxx="產品名稱"><span>蜂蜜檸檬</span></td>
+                    <td data-xxx="產品價格"><span>60</span></td>
+                    <td data-xxx="產品數量"><span>9</span></td>
+                    <td data-xxx="產品備註"><span>天然蜂蜜</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

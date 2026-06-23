@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenData - 農村地方美食小吃特色料理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+</head>
+
+<body>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        // 主程式
+        $(function(){
+            console.log("Hello world!");
+
+            // 變數 const變數不能修改；設定的資料(路徑、權限)
+            const username = '王小明';
+            console.log(username);
+            // username = '王小明99';
+            // console.log(username);
+
+            // 變數 let變數可以修改；設定一般程式的變數
+            let nickname = '陳小明';
+            console.log(nickname);
+            nickname = '陳小明99';
+            console.log(nickname);
+
+            // foreach 用來讀取每一筆資料
+            const shop = [
+                {
+                    "name" : "老王牛肉麵",
+                    "City" : "台北市",
+                    "Tel" : "04-2222-2222",
+                    "Town": "信義區",
+    "Email": "sanfufarm@gmail.com",
+                },
+                {
+                    "name" : "老劉牛肉麵",
+                    "City" : "台中市",
+                    "Tel" : "04-2222-7777",
+                    "Town": "  南   屯 區   ",
+    "Email": "sanfufarm@gmail.com",
+                },
+                {
+                    "name" : "小王羊肉麵",
+                    "City" : "台南市",
+                    "Tel" : "04-3333-2222",
+                    "Town": undefined,
+    "Email": undefined,
+                },
+                {
+                    "name" : "小江豬肉麵",
+                    "City" : "台南市",
+                    "Tel" : "04-6666-7777",
+                    "Town": null,
+    "Email": null,
+                }
+            ]
+            shop.forEach(function(item, index) {
+                if (item.City == "台南市") {
+                console.log(item);
+                // console.log(item.name);
+                // js限定的寫法
+                console.log(index + "我要用餐的店家名稱為" + item.name + "，所在縣市為" + item.City);
+                // 通用的寫法
+                console.log(`${index}我要用餐的店家名稱為${item.name}，所在縣市為${item.City}`);
+                };
+            });
+
+            // map 重新整理資料
+            const names = shop.map(function(item){
+                return item.name
+            });
+            console.log("原本的資料", shop);
+            console.log("map轉換後的資料", names);
+
+            // map 重構資料欄位
+            const result01=shop.map(function(item,index){
+                return{
+                    //  function呼叫index後，才能用
+                    id: index + 1,
+                    myName: item.name,
+                    myCity: item.City,
+                    myTel: item.Tel
+                };
+            });
+            console.log('原本的資料', shop);
+            console.log('map重構後的資料', result01);
+
+            // 資料清洗
+            // shop.forEach(function(item){
+            //     console.log(item.Town.length)
+            // })
+            const cleanShop = shop.map(function(item){
+                return{
+                    Name: item.name,
+                    City: item.City,
+                    Tel: item.Tel,
+                    Town: (item.Town ?? "").trim(),
+                    // 判斷undefined或null改成""
+                    // trim清洗(字串前後的)空白鍵
+                    Email: item.Email ?? "未提供"
+                }
+            })
+            console.log('原本的資料', shop);
+            console.log('資料清洗後的資料', cleanShop);
+        });
+    </script>
+</body>
+</html>
