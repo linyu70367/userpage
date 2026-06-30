@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林郁鈞｜軟體工程師作品集</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f0ea;
+            --card-bg: #ffffff;
+            --primary-color: #6e5d4f;
+            --text-main: #433a35;
+            --text-muted: #8c827a;
+            --accent-color: #e3dac9;
+            --border-color: #d1c7bd;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 2rem 0;
+        }
+
+        /* 保持 Header 原有架構與版面配置 */
+        .resume-header {
+            position: relative;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(110, 93, 79, 0.05);
+        }
+
+        .resume-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .motto {
+            font-style: italic;
+            color: var(--text-muted);
+            background-color: var(--bg-color);
+            padding: 0.75rem 1.2rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text {
+            line-height: 1.7;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        /* 作品區塊美化 */
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .portfolio-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            height: 100%;
+            box-shadow: 0 2px 6px rgba(110, 93, 79, 0.02);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(110, 93, 79, 0.08);
+            border-color: var(--primary-color);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-context {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            background-color: var(--bg-color);
+            padding: 0.4rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .card-list {
+            padding-left: 1.2rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .card-list li {
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+        }
+
+        .btn-view {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.92rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            font-weight: 500;
+        }
+
+        .btn-view:hover {
+            background-color: #56483d;
+            color: #ffffff;
+        }
+
+        .btn-view:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 960px;">
+        <header class="resume-header">
+            <h1 class="resume-title">林郁鈞履歷</h1>
+            <h2 class="resume-subtitle">應徵職位：軟體工程師</h2>
+            <p class="motto">座右銘：在非洲每過1分鐘，台灣就過了60秒。</p>
+            <p class="intro-text">
+                浙江公里臨時保證檢索成立，把握營養維修浪費，
+                不起如下，對我升級信號投入很容易兒子廣場今年財產很多想起，
+                先生財富哪些，男。
+            </p>
+        </header>
+
+        <main>
+            <h1 class="section-title">我的作品</h1>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="portfolio-card">
+                        <h2 class="card-title">5/27 切版練習</h2>
+                        <p class="card-context">使用情境：客運網站入口</p>
+                        <ol class="card-list">
+                            <li>使用HTML切版</li>
+                            <li>CSS修飾</li>
+                            <li>AI優化CSS配色</li>
+                        </ol>
+                        <a href="http://127.0.0.1:5500/20260602-1-ai01.html" class="btn-view">查看作品</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="portfolio-card">
+                        <h2 class="card-title">6/5 table練習</h2>
+                        <p class="card-context">使用情境：飲料店後台</p>
+                        <ol class="card-list">
+                            <li>使用bootstrap</li>
+                            <li>加入響應式佈局</li>
+                            <li>小於768px使用偽元素加入欄位資訊</li>
+                            <li>AI美化</li>
+                        </ol>
+                        <a href="http://127.0.0.1:5500/20260605-ch5_table-ai01.html" class="btn-view">查看作品</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="portfolio-card">
+                        <h2 class="card-title">6/9 javascript練習</h2>
+                        <ol class="card-list">
+                            <li>使用javascript練習資料清洗</li>
+                            <li>jQuery渲染</li>
+                        </ol>
+                        <a href="http://127.0.0.1:5500/20260609-ex1-demo.html" class="btn-view">查看作品</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="portfolio-card">
+                        <h2 class="card-title">6/18 javascript練習</h2>
+                        <ol class="card-list">
+                            <li>引用外部json資料</li>
+                            <li>javascript資料清洗</li>
+                            <li>jQuery渲染</li>
+                            <li>boorstrap響應式設計排版練習</li>
+                        </ol>
+                        <a href="http://127.0.0.1:5500/20260618-ex2-0-jsonServe.html" class="btn-view">查看作品</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="portfolio-card">
+                        <h2 class="card-title">6/30 設計互動表單</h2>
+                        <p class="card-context">使用情境：飲料店訂餐系統</p>
+                        <ol class="card-list">
+                            <li>bootstrap</li>
+                            <li>sweetalert</li>
+                            <li>jQuery</li>
+                        </ol>
+                        <a href="http://127.0.0.1:5500/20260625-ch11-form-JS%20(AI).html" class="btn-view">查看作品</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="portfolio-card">
+                        <h2 class="card-title">5/29 切版練習</h2>
+                        <p class="card-context">使用HTML、CSS練習切版</p>
+                        <a href="http://127.0.0.1:5500/2026-userpage-ai01-demo.html#" class="btn-view">查看作品</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

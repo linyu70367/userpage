@@ -9,6 +9,18 @@
 </head>
 
 <body>
+    
+    <div class="container">
+        <div class="display-2">原始資料</div>
+        <div class="row" id="h">
+            <div class="col-3">
+                132
+            </div>
+        </div>
+        <div class="display-2">清洗後資料</div>
+        <div class="row" id="ch">
+        </div>
+    </div>
     <script src="js/jquery-4.0.0.js"></script>
     <script>
         const hotel = [
@@ -112,7 +124,7 @@
             // 移除前後空白；若沒有資料，顯示 行政區未提供
             let town=(item.Town ?? "行政區未提供").trim();
             if(town == ""){
-                town=="行政區未提供"
+                town="行政區未提供"
             }
 
             return{
@@ -130,8 +142,39 @@
 
 
 
+
+
         console.log('原本的資料', hotel);
         console.log('資料清洗後的資料', cleanHotel);
+
+        $("#h").empty();
+                        // 開始渲染
+        hotel.forEach(function (item) {
+                            let strHtml_h = `<div class="col-3 p-3">
+                                Name: ${item.Name},<br>
+                City: ${item.City},<br>
+                Town: ${item.Town},<br>
+                Tel: ${item.Tel},<br>
+                RoomType: ${item.RoomType},<br>
+                Price: ${item.Price},<br>
+                Email: ${item.Email}
+                </div>`
+                            $("#h").append(strHtml_h);});
+        $("#ch").empty();
+                        // 開始渲染
+        cleanHotel.forEach(function (item) {
+                            let strHtml_ch = `<div class="col-3 p-3">
+                                Name: ${item.Name},<br>
+                City: ${item.City},<br>
+                Town: ${item.Town},<br>
+                Tel: ${item.Tel},<br>
+                RoomType: ${item.RoomType},<br>
+                Price: ${item.Price},<br>
+                Email: ${item.Email}
+                </div>`
+                            $("#ch").append(strHtml_ch);});
+        
+
         
     </script>
 </body>

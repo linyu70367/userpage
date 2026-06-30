@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <style>
         *{
@@ -162,13 +163,13 @@
             display: inline-block;
             vertical-align: top;
 
-            width: 320px;
+            /* width: 320px; */
             min-height: 220px;
 
             background-color: var(--color-bg-card);
             border: 1px solid var(--color-border);
 
-            margin: 12px;
+            /* margin: 2px; */
             padding: 25px;
 
             border-radius: 16px;
@@ -249,6 +250,7 @@
 </head>
 
 <body>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
     <section class="s01">
 
@@ -279,21 +281,38 @@
     <section class="s02">
 
         <h2>我的作品</h2>
-
-        <div class="card">
+<div class="row">
+        <div class="col-4 card">
             <h3>5/27 切版練習</h3>
             <p>使用情境：客運網站入口</p>
-            <p>HTML、CSS</p>
-            <a href="20260527-1.html" target="_blank">手寫框架</a>
-            <a href="20260602-1-ai01.html" target="_blank">AI優化</a>
+            <p>1. 使用HTML切版<br>2. CSS修飾<br>3. AI優化CSS配色</p>
+            <a href="20260602-1-ai01.html" target="_blank">查看作品</a>
         </div>
 
-        <div class="card">
+        <div class="col-4 card">
             <h3>6/5 table練習</h3>
             <p>使用情境：飲料店後台</p>
-            <p>1. 使用bootstrap<br>2. 加入響應式佈局<br>3. 小於768px使用偽元素加入欄位資訊</p>
-            <a href="20260605-ch5_table.html" target="_blank">手寫框架</a>
-            <a href="20260605-ch5_table-ai01.html" target="_blank">AI優化</a>
+            <p>1. 使用bootstrap<br>2. 加入響應式佈局<br>3. 小於768px使用偽元素加入欄位資訊<br>4. AI美化</p>
+            <a href="20260605-ch5_table-ai01.html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="col-4 card">
+            <h3>6/9 javascript練習</h3>
+            <p>1. 使用javascript練習資料清洗<br>2. jQuery渲染</p>
+            <a href="20260609-ex1-demo.html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="col-4 card">
+            <h3>6/18 javascript練習</h3>
+            <p>1. 引用外部json資料<br>2. javascript資料清洗<br>3. jQuery渲染<br>4. boorstrap響應式設計排版練習</p>
+            <a href="20260618-ex2-0-jsonServe.html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="col-4 card">
+            <h3>6/30 設計互動表單</h3>
+            <p>使用情境：飲料店訂餐系統</p>
+            <p>1. bootstrap<br>2. sweetalert<br>3. jQuery</p>
+            <a href="20260625-ch11-form-JS (AI).html" target="_blank">查看作品</a>
         </div>
 
         <div class="card">
@@ -301,23 +320,6 @@
             <p>使用HTML、CSS練習切版</p>
             <a href="#" target="_blank">查看作品</a>
         </div>
-
-        <div class="card">
-            <h3>5/29 切版練習</h3>
-            <p>使用HTML、CSS練習切版</p>
-            <a href="#" target="_blank">查看作品</a>
-        </div>
-
-        <div class="card">
-            <h3>5/29 切版練習</h3>
-            <p>使用HTML、CSS練習切版</p>
-            <a href="#" target="_blank">查看作品</a>
-        </div>
-
-        <div class="card">
-            <h3>5/29 切版練習</h3>
-            <p>使用HTML、CSS練習切版</p>
-            <a href="#" target="_blank">查看作品</a>
         </div>
 
     </section>
