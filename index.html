@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,260 +10,240 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
-
-        * {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --color-primary: #3E3227;
-            --color-eva-purple: #8B7355;
-            --color-eva-green: #D2B48C;
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+        :root{
+            --color-primary: #1A1325;
+            --color-eva-purple: #6D4AB3;
+            --color-eva-green: #7ED957;
 
             --color-accent: var(--color-eva-purple);
-            --color-accent-hover: #A0886C;
+            --color-accent-hover: #8D69D8;
 
-            --color-bg-page: #1a1411; /* 稍微加深底色，拉開對比 */
-            --color-bg-card: #251d18; 
+            --color-bg-page: #0D0D12;
+            --color-bg-card: #1C1C27;
 
-            --color-text-primary: #F5EFEB;
-            --color-text-secondary: #BAA699;
+            --color-text-primary: #F4F4F4;
+            --color-text-secondary: #A7A7B5;
             --color-text-light: #FFFFFF;
 
             --color-heading: var(--color-eva-green);
-            --color-border: #3d3026;
+
+            --color-border: #333344;
             --color-border-accent: var(--color-eva-purple);
 
-            --color-shadow-card: rgba(0, 0, 0, .45);
-            --color-shadow-glow: rgba(210, 180, 140, .2);
+            --color-corner-box: var(--color-eva-purple);
 
-            --gradient-hero: linear-gradient(135deg, #1a1411 0%, #2f251e 50%, #423429 100%);
+            --color-shadow-card: rgba(0,0,0,.35);
+            --color-shadow-glow: rgba(126,217,87,.15);
+
+            --gradient-hero:
+                linear-gradient(
+                    135deg,
+                    #0D0D12 0%,
+                    #1A1325 35%,
+                    #241A36 100%
+                );
         }
 
-        body {
+        body{
             font-family: "Zen Maru Gothic", sans-serif;
             background-color: var(--color-bg-page);
             color: var(--color-text-primary);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        .s01 {
+        .s01{
             background: var(--gradient-hero);
-            min-height: 100vh;
+            height: 100vh;
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
         }
 
-        /* 裝飾背景框線優化 */
-        .s01 .deco-box {
-            width: 160px;
-            height: 160px;
-            border: 2px solid var(--color-eva-purple);
-            opacity: .08;
+        .s01 .box01,
+        .s01 .box02,
+        .s01 .box03,
+        .s01 .box04{
+            width: 200px;
+            height: 200px;
+            background-color: var(--color-corner-box);
+            opacity: .12;
             position: absolute;
-            pointer-events: none;
         }
-        .s01 .box01 { top: 30px; left: 30px; border-right: none; border-bottom: none; }
-        .s01 .box02 { top: 30px; right: 30px; border-left: none; border-bottom: none; }
-        .s01 .box03 { bottom: 30px; left: 30px; border-right: none; border-top: none; }
-        .s01 .box04 { bottom: 30px; right: 30px; border-left: none; border-top: none; }
 
-        /* 左側文字容器：加入微霧毛玻璃底色，提升可讀性 */
-        .userText-wrapper {
-            background: rgba(37, 29, 24, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(139, 115, 85, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        .s01 .box01{
+            top: 0;
+            left: 0;
+        }
+
+        .s01 .box02{
+            top: 0;
+            right: 0;
+        }
+
+        .s01 .box03{
+            bottom: 0;
+            left: 0;
+        }
+
+        .s01 .box04{
+            bottom: 0;
+            right: 0;
+        }
+
+        .s01 .userimg{
+            background-image: url(images/man04.jpg);
+            background-position: center center;
+            background-size: cover;
+
+            position: absolute;
+            top: 100px;
+            bottom: 100px;
+            left: 100px;
+            right: 100px;
+
+            border-radius: 20px;
+            border: 2px solid var(--color-border-accent);
+
+            box-shadow:
+                0 0 25px var(--color-shadow-glow),
+                0 0 80px rgba(6,182,212,.15);
+        }
+
+        .userText{
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            right: 50%;
             z-index: 10;
         }
 
-        .userText h1 {
-            font-size: 3.2rem;
+        .userText h1{
+            font-size: 3rem;
             font-weight: 900;
             color: var(--color-text-light);
-            margin-bottom: 0;
-            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        .userText hr {
+        .userText hr{
             border: none;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-accent), transparent);
-            margin: 20px 0;
-            opacity: 1;
-        }
-
-        .userText h2 {
-            font-size: 1.8rem;
-            color: var(--color-heading);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .userText .motto {
-            font-style: italic;
-            color: var(--color-eva-green);
-            background: rgba(210, 180, 140, 0.1);
-            padding: 8px 16px;
-            border-left: 3px solid var(--color-eva-green);
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .userText p {
-            color: var(--color-text-secondary);
-            margin-bottom: 0;
-            text-align: justify;
-        }
-
-        /* 右側大圖優化：維持原本的漂亮陰影，並確保響應式比例 */
-        .userimg-container {
-            position: relative;
-            width: 100%;
-            height: 550px;
-        }
-
-        .s01 .userimg {
-            width: 100%;
-            height: 100%;
-            background-image: url('images/man04.jpg');
-            background-position: center center;
-            background-size: cover;
-            border-radius: 24px;
-            border: 2px solid var(--color-border-accent);
-            box-shadow:
-                0 15px 35px var(--color-shadow-card),
-                0 0 50px rgba(139, 115, 85, 0.2);
-        }
-
-        /* 作品集區塊優化 */
-        .s02 {
-            background-color: var(--color-bg-page);
-            padding: 100px 20px;
-        }
-
-        .s02 h2 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: var(--color-heading);
-            margin-bottom: 60px;
-            text-align: center;
-            position: relative;
-        }
-
-        .s02 h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
+            height: 2px;
             background-color: var(--color-accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
+            margin: 15px 0;
         }
 
-        /* 卡片主體：完美整合 Bootstrap 的欄位間距 */
-        .s02 .cardbox {
-            display: flex;
-            flex-direction: column;
-            height: 100%; /* 確保同排卡片等高 */
+        .userText h2{
+            color: var(--color-heading);
+            margin-bottom: 15px;
+        }
+
+        .userText p{
+            margin-bottom: 8px;
+        }
+
+        .s02{
+            background-color: var(--color-bg-page);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .s02 h2{
+            font-size: 2.8rem;
+            color: var(--color-heading);
+            margin-bottom: 50px;
+        }
+
+        .s02 .card{
+            display: inline-block;
+            vertical-align: top;
+
+            /* width: 320px; */
+            min-height: 220px;
+
             background-color: var(--color-bg-card);
             border: 1px solid var(--color-border);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px var(--color-shadow-card);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        border-color 0.4s ease, 
-                        box-shadow 0.4s ease;
+
+            /* margin: 2px; */
+            padding: 25px;
+
+            border-radius: 16px;
+            text-align: left;
+
+            box-shadow: 0 8px 20px var(--color-shadow-card);
+            transition: all .35s ease;
         }
 
-        .s02 .cardbox:hover {
-            transform: translateY(-10px);
+        .s02 .card:hover{
+            transform: translateY(-8px);
             border-color: var(--color-border-accent);
+
             box-shadow:
-                0 20px 40px var(--color-shadow-card),
-                0 0 25px var(--color-shadow-glow);
+                0 12px 28px var(--color-shadow-card),
+                0 0 20px var(--color-shadow-glow);
         }
 
-        .s02 .cardbox h3 {
-            color: var(--color-text-light);
-            font-size: 1.4rem;
-            font-weight: 700;
+        .s02 .card h3{
+            color: var(--color-text-primary);
+            font-size: 1.5rem;
             margin-bottom: 15px;
         }
 
-        .s02 .cardbox .usage {
-            color: var(--color-heading);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .s02 .cardbox .desc {
+        .s02 .card p{
             color: var(--color-text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-            flex-grow: 1; /* 將按鈕推至底部對齊 */
+            margin-bottom: 20px;
         }
 
-        /* 按鈕優化 */
-        .s02 .cardbox a {
-            display: block;
-            text-align: center;
+        .s02 .card a{
+            display: inline-block;
             text-decoration: none;
-            background-color: transparent;
-            color: var(--color-text-light);
-            border: 1px solid var(--color-accent);
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: all .3s ease;
-        }
 
-        .s02 .cardbox a:hover {
             background-color: var(--color-accent);
-            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+            color: var(--color-text-light);
+
+            padding: 10px 18px;
+            border-radius: 8px;
+
+            transition: .3s;
         }
 
-        /* 響應式斷點調整 */
-        @media(max-width: 991.98px) {
-            .s01 {
-                min-height: auto;
-                padding: 80px 0;
+        .s02 .card a:hover{
+            background-color: var(--color-accent-hover);
+        }
+
+        @media(max-width: 992px){
+
+            .s01 .userimg{
+                top: 50px;
+                bottom: 50px;
+                left: 50px;
+                right: 50px;
             }
-            .userText-wrapper {
-                margin-bottom: 40px;
-                padding: 30px;
-            }
-            .userimg-container {
-                height: 400px;
-            }
-            .userText h1 {
-                font-size: 2.5rem;
+
+            .userText{
+                left: 10%;
+                right: 10%;
+                top: 65%;
             }
         }
 
-        @media(max-width: 575.98px) {
-            .userText h1 {
+        @media(max-width: 768px){
+
+            .userText h1{
                 font-size: 2rem;
             }
-            .userText h2 {
-                font-size: 1.4rem;
+
+            .userText{
+                top: 60%;
             }
-            .s02 h2 {
-                font-size: 2.2rem;
-            }
-            .s02 .cardbox {
-                padding: 20px;
+
+            .s02 .card{
+                width: 90%;
             }
         }
     </style>
@@ -273,110 +252,77 @@
 <body>
     <script src="js/bootstrap.bundle.min.js"></script>
 
-    <!-- 首頁區塊 -->
     <section class="s01">
-        <div class="deco-box box01"></div>
-        <div class="deco-box box02"></div>
-        <div class="deco-box box03"></div>
-        <div class="deco-box box04"></div>
 
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <!-- 左側文案 -->
-                <div class="col-lg-7">
-                    <div class="userText-wrapper">
-                        <div class="userText">
-                            <h1>林郁鈞履歷</h1>
-                            <hr>
-                            <h2>應徵職位：軟體工程師</h2>
-                            <p class="motto">座右銘：在非洲每過1分鐘，台灣就過了60秒。</p>
-                            <p>
-                                浙江公里臨時保證檢索成立，把握營養維修浪費，
-                                不起如下，對我升級信號投入很容易兒子廣場今年財產很多想起，
-                                先生財富哪些，男。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 右側大圖 -->
-                <div class="col-lg-5">
-                    <div class="userimg-container">
-                        <div class="userimg"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+
+        <div class="userimg"></div>
+
+        <div class="userText">
+            <h1>林郁鈞履歷</h1>
+            <hr>
+
+            <h2>應徵職位：軟體工程師</h2>
+
+            <p>座右銘：在非洲每過1分鐘，台灣就過了60秒。</p>
+
+            <p>
+                浙江公里臨時保證檢索成立，把握營養維修浪費，
+                不起如下，對我升級信號投入很容易兒子廣場今年財產很多想起，
+                先生財富哪些，男。
+            </p>
         </div>
+
     </section>
 
-    <!-- 作品集區塊 -->
     <section class="s02">
-        <div class="container">
-            <h2>我的作品</h2>
-            <div class="row g-4"> <!-- 使用 Bootstrap g-4 控制欄位卡片間距 -->
-                
-                <!-- 作品 1 -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="cardbox">
-                        <h3>5/27 切版練習</h3>
-                        <p class="usage"><i class="fa-solid fa-laptop-code me-2"></i>使用情境：客運網站入口</p>
-                        <p class="desc">1. 使用HTML切版<br>2. CSS修飾<br>3. AI優化CSS配色</p>
-                        <a href="20260602-1-ai01.html" target="_blank">查看作品</a>
-                    </div>
-                </div>
 
-                <!-- 作品 2 -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="cardbox">
-                        <h3>6/5 table練習</h3>
-                        <p class="usage"><i class="fa-solid fa-laptop-code me-2"></i>使用情境：飲料店後台</p>
-                        <p class="desc">1. 使用bootstrap<br>2. 加入響應式佈局<br>3. 小於768px使用偽元素加入欄位資訊<br>4. AI美化</p>
-                        <a href="20260605-ch5_table-ai01.html" target="_blank">查看作品</a>
-                    </div>
-                </div>
-
-                <!-- 作品 3 -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="cardbox">
-                        <h3>6/9 javascript練習</h3>
-                        <p class="usage"><i class="fa-solid fa-code me-2"></i>資料處理練習</p>
-                        <p class="desc">1. 使用javascript練習資料清洗<br>2. jQuery渲染</p>
-                        <a href="20260609-ex1-demo.html" target="_blank">查看作品</a>
-                    </div>
-                </div>
-
-                <!-- 作品 4 -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="cardbox">
-                        <h3>6/18 javascript練習</h3>
-                        <p class="usage"><i class="fa-solid fa-code me-2"></i>異步資料串接</p>
-                        <p class="desc">1. 引用外部json資料<br>2. javascript資料清洗<br>3. jQuery渲染<br>4. bootstrap響應式設計排版練習</p>
-                        <a href="20260618-ex2-0-jsonServe.html" target="_blank">查看作品</a>
-                    </div>
-                </div>
-
-                <!-- 作品 5 -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="cardbox">
-                        <h3>6/30 設計互動表單</h3>
-                        <p class="usage"><i class="fa-solid fa-basket-shopping me-2"></i>使用情境：飲料店訂餐系統</p>
-                        <p class="desc">1. bootstrap<br>2. sweetalert<br>3. jQuery</p>
-                        <a href="20260625-ch11-form-JS (AI).html" target="_blank">查看作品</a>
-                    </div>
-                </div>
-
-                <!-- 作品 6 -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="cardbox">
-                        <h3>6/30 設計互動表單</h3>
-                        <p class="usage"><i class="fa-solid fa-basket-shopping me-2"></i>使用情境：飲料店訂餐系統</p>
-                        <p class="desc">1. bootstrap<br>2. sweetalert<br>3. jQuery</p>
-                        <a href="20260625-ch11-form-JS (AI).html" target="_blank">查看作品</a>
-                    </div>
-                </div>
-
-            </div>
+        <h2>我的作品</h2>
+<div class="row">
+        <div class="col-4 card">
+            <h3>5/27 切版練習</h3>
+            <p>使用情境：客運網站入口</p>
+            <p>1. 使用HTML切版<br>2. CSS修飾<br>3. AI優化CSS配色</p>
+            <a href="20260602-1-ai01.html" target="_blank">查看作品</a>
         </div>
-    </section>
-</body>
 
+        <div class="col-4 card">
+            <h3>6/5 table練習</h3>
+            <p>使用情境：飲料店後台</p>
+            <p>1. 使用bootstrap<br>2. 加入響應式佈局<br>3. 小於768px使用偽元素加入欄位資訊<br>4. AI美化</p>
+            <a href="20260605-ch5_table-ai01.html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="col-4 card">
+            <h3>6/9 javascript練習</h3>
+            <p>1. 使用javascript練習資料清洗<br>2. jQuery渲染</p>
+            <a href="20260609-ex1-demo.html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="col-4 card">
+            <h3>6/18 javascript練習</h3>
+            <p>1. 引用外部json資料<br>2. javascript資料清洗<br>3. jQuery渲染<br>4. boorstrap響應式設計排版練習</p>
+            <a href="20260618-ex2-0-jsonServe.html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="col-4 card">
+            <h3>6/30 設計互動表單</h3>
+            <p>使用情境：飲料店訂餐系統</p>
+            <p>1. bootstrap<br>2. sweetalert<br>3. jQuery</p>
+            <a href="20260625-ch11-form-JS (AI).html" target="_blank">查看作品</a>
+        </div>
+
+        <div class="card">
+            <h3>5/29 切版練習</h3>
+            <p>使用HTML、CSS練習切版</p>
+            <a href="#" target="_blank">查看作品</a>
+        </div>
+        </div>
+
+    </section>
+
+</body>
 </html>
